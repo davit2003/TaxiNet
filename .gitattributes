@@ -62,4 +62,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 * linguist-vendored
-*.js linguist-vendored=false
+*.C# linguist-vendored=false
