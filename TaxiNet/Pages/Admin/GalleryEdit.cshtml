@@ -1,0 +1,55 @@
+﻿@page "{id:int}"
+@model TaxiNet.Pages.Admin.GalleryEditModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Edit";
+}
+<div class="content">
+    <div class="col-md-12">
+        <div class="card raw">
+            <div class="card-header">
+                <h5 class="title">Edit Gallery Item - @Model.galleryItem.Id</h5>
+            </div>
+            <div class="card-body m-2">
+                <form method="post" enctype="multipart/form-data">
+                    @Html.HiddenFor(m => m.galleryItem.Id)
+                    @Html.HiddenFor(m => m.galleryItem.ImageUrl)
+                    <div class="row">
+                        <div class="col-md-3 px-1">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" class="form-control" placeholder="Title" asp-for="@Model.galleryItem.Title">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 px-1">
+                            <div class="form-group">
+                                <label>Type</label>
+                                <select name="cars" class="form-control" asp-for="@Model.galleryItem.GalleryItemType">
+                                    <option value="1">Type 1</option>
+                                    <option value="2">Type 2</option>
+                                    <option value="3">Type 3</option>
+                                    <option value="4">Type 4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 px-1">
+                            <label>Choose a picture:</label>
+                            <input class="form-control" style="border:none" asp-for="@Model.Upload">
+                            <img src="~/@Model.galleryItem.ImageUrl" alt="Alternate Text" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mt-2">
+                            <input type="submit" class="form-control btn btn-primary" value="Save">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

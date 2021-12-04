@@ -1,0 +1,21 @@
+﻿@page
+@model TaxiNet.Pages.LogInModel
+@{
+    Layout = "_EmptyLayout";
+}
+<div class="container-fluid d-flex justify-content-center align-items-center SignInContainer">
+    <form method="post">
+        <div class="container d-flex flex-column justify-content-between FormContainer">
+            <h2 class="text-center">TaxiNet Log In</h2>
+            <div class="d-flex flex-column">
+                <input type="text" placeholder="Enter Username" asp-for="authenticateRequest.Username" required>
+            </div>
+
+            <div class="d-flex flex-column">
+                <input type="password" placeholder="Enter Password" asp-for="authenticateRequest.Password" required>
+            </div>
+
+            <button type="submit">Log In</button>
+        </div>
+    </form>
+</div>

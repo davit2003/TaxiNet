@@ -1,0 +1,64 @@
+﻿@page
+@model TaxiNet.Pages.Admin.GalleryControllerModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Gallery Table";
+}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Gallery</h4>
+                    <a asp-page="./GalleryAdd">Add Gallery Item</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <form method="post">
+                            <table class="table">
+                                <thead class="text-primary">
+                                <th>
+                                    Title
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    Last Modified
+                                </th>
+                                <th class="text-right">
+                                    Actions
+                                </th>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 1; i <= Model.galleryItems.Count; i++)
+                                    {
+                                        var item = Model.galleryItems[i - 1];
+                                        <tr>
+                                            <td>
+                                                @item.Title
+                                            </td>
+                                            <td>
+                                                @item.GalleryItemType
+                                            </td>
+                                            <td>
+                                                @item.LastModified
+                                            </td>
+                                            <td class="text-right">
+                                                <a asp-page="./GalleryEdit" asp-route-id="@item.Id">Edit</a>
+                                                <span> | </span>
+                                                <button type="submit" asp-page-handler="delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want to delete this item?');" style="background: none; border: none;outline: none; color: #f96332; padding: 0; }" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

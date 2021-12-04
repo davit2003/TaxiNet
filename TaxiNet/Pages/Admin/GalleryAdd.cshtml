@@ -1,0 +1,58 @@
+﻿@page
+@model TaxiNet.Pages.Admin.GalleryAddModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Create";
+}
+<div class="content">
+    <div class="col-md-12">
+        <div class="card raw">
+            <div class="card-header">
+                <h5 class="title">Create Gallery Item</h5>
+            </div>
+            <div class="card-body m-2">
+                <form method="post" enctype="multipart/form-data">
+                    @Html.HiddenFor(m => m.GalleryItem.Id)
+                    @Html.HiddenFor(m => m.GalleryItem.ImageUrl)
+                    <div class="row">
+                        <div class="col-md-3 px-1">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" class="form-control" placeholder="Title" asp-for="@Model.GalleryItem.Title">
+                                <span class="alert-danger" asp-validation-for="@Model.GalleryItem.Title"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 px-1">
+                            <div class="form-group">
+                                <label>Type</label>
+                                <select name="cars" class="form-control" asp-for="@Model.GalleryItem.GalleryItemType">
+                                    <option value="1">Type 1</option>
+                                    <option value="2">Type 2</option>
+                                    <option value="3">Type 3</option>
+                                    <option value="4">Type 4</option>
+                                </select>
+                                <span class="alert-danger" asp-validation-for="@Model.GalleryItem.GalleryItemType"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 px-1">
+                            <label>Choose a picture:</label>
+                            <input class="form-control" style="border:none" asp-for="@Model.Image">
+                            <span class="alert-danger" asp-validation-for="@Model.Image"></span>
+                            @*<img src="~/@Model.GalleryItem.ImageUrl" alt="Alternate Text" />*@
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mt-2">
+                            <input type="submit" class="form-control btn btn-primary" value="Save">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

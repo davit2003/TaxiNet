@@ -1,0 +1,62 @@
+﻿@page
+@model TaxiNet.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<div style="width: 100%"><iframe style=" width: 100%; height: 500px" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=26%20Giorgi%20Chkondideli%20St%2C%20Tbilisi+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/coordinates.html">find my location</a></iframe></div>
+<br />
+<section class="container d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column mx-auto contact-content">
+    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 contact-box">
+        <div class="contact-form">
+            <div class="title">Contact</div>
+            <form method="post">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div>
+                            <input type="text" asp-for="email.Name" placeholder="FirstName" data-error="*" />
+                        </div>
+                        <div>
+                            <input type="email" asp-for="email.EmailAddress" placeholder="Email" data-error="*" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div>
+                            <textarea asp-for="email.Text" placeholder="Text" data-error="*"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div>
+                            <!--<img src="images/car2.jpg" style="margin-bottom: 5px; height: 40px; width: 76px;" id="Captcha" alt="Captcha">
+                                <input type="text" id="CaptchaVal" name="CaptchaVal" class="CaptchaVal" maxlength="5" placeholder="Captcha" data-lengths="[5]" data-error="მიუთითეთ უსაფრთხოების კოდი">-->
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button type="submit">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 contact-box-right">
+        <ul class="main-contact1">
+            <li class="d-flex flex-row align-items-center">
+                <img src="images/gps_goldd.png" alt="gps">
+                <p>0159 Georgia Tbilisi Chkondideli Street № 26</p>
+            </li>
+            <li class="d-flex flex-row align-items-center">
+                <img src="images/phone_goldd.png" alt="tel" />
+                <p>(032) 2 222 555</p>
+            </li>
+            <li class="d-flex flex-row align-items-center">
+                <img src="images/time_goldd.png" alt="time" />
+                <p>Monday-Friday 09.00-17.00</p>
+            </li>
+            <li class="d-flex flex-row align-items-center">
+                <img src="images/mail_goldd.png" alt="mail" />
+                <p>info@adtaxi.ge</p>
+            </li>
+        </ul>
+    </div>
+</section>

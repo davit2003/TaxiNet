@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewData["Title"] - AdTaxi</title>
+    <link rel="stylesheet" href="~/css/swiper.min.css">
+    <link rel="stylesheet" href="~/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/reset.css">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+</head>
+<body>
+    <header>
+        <section class="container-fluid header-nav">
+            <ul class="container d-flex flex-row">
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="https://www.google.com/gmail/about/" target="_blank"><i class="fab fa-google-plus-square"></i></a></li>
+            </ul>
+        </section>
+        <nav>
+            <div class="container-fluid menu">
+                <div class="container d-flex flex-row justify-content-between align-items-center main-menu">
+                    <h1 class="logo"><a asp-area="" asp-page="/Index"><img src="~/images/Logo.png" alt="Logo"></a></h1>
+                    <ul class="d-flex flex-row">
+                        <li><a asp-area="" asp-page="/Index">Home</a></li>
+                        <li><a asp-area="" asp-page="/Gallery">Gallery</a></li>
+                        <li><a asp-area="" asp-page="/AboutUs">About Us</a></li>
+                        <li><a asp-area="" asp-page="/Contact">Contact</a></li>
+                    </ul>
+                    <div class="openbutton" onclick="menuopen(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="hiddenmenu">
+                <div class="closebutton" onclick="menuclose()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-x" viewBox="0 0 16 16">
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </div>
+                <ul class="d-flex flex-column justify-content-around">
+                    <li><a asp-area="" asp-page="/Index">Home</a></li>
+                    <li><a asp-area="" asp-page="/Gallery">Gallery</a></li>
+                    <li><a asp-area="" asp-page="/AboutUs">About Us</a></li>
+                    <li><a asp-area="" asp-page="/Contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="~/js/all.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/jquery-3.4.1.min.js"></script>
+    <script src="~/js/swiper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/script.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

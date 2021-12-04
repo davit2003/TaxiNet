@@ -1,0 +1,27 @@
+﻿@page
+@model TaxiNet.Pages.GalleryModel;
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<section class="container mt-5">
+    <ul class="types">
+        <li onclick="change(this.innerHTML)">All</li>
+        <li onclick="change(this.innerHTML)">Type1</li>
+        <li onclick="change(this.innerHTML)">Type2</li>
+        <li onclick="change(this.innerHTML)">Type3</li>
+        <li onclick="change(this.innerHTML)">Type4</li>
+    </ul>
+    <section class="type-container mt-3 row">
+        @foreach (var item in Model.GalleryItems)
+        {
+            <div class="boxes col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3" data-content=@item.GalleryItemType onclick="openimage(this)">
+                <img src="@item.ImageUrl" alt="car" class="img-cont">
+                <div class="overlay"><p class="textoverlay">@item.Title</p></div>
+            </div>
+        }
+    </section>
+</section>
+<div class="photo-overlay" onclick="closephoto()">
+    <img id="photo" src="" alt="CarPhoto">
+</div>
